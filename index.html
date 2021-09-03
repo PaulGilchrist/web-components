@@ -1,0 +1,26 @@
+<!-- https://www.robinwieruch.de/web-components-tutorial -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Learing Web Components</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="button-component.js"></script>
+    <script src="dropdown-component.js"></script>
+</head>
+
+<body>
+    <my-dropdown label="Dropdown" option="option2"></my-dropdown>
+    <script>
+        document.querySelector('my-dropdown').options = {
+            option1: { label: 'Option 1' },
+            option2: { label: 'Option 2' },
+        };
+        document
+            .querySelector('my-dropdown')
+            .addEventListener('onChange', event => console.log(event.detail));
+    </script>
+</body>
+
+</html>
